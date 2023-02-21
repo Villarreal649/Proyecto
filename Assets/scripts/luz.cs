@@ -36,3 +36,4 @@ public class luz : MonoBehaviour
         titila = false;
     }
 }
+//prueba de main
