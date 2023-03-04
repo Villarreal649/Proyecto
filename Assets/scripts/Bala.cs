@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
      [SerializeField] float speed;
+     
 
 
     // Update is called once per frame
@@ -15,5 +16,11 @@ public class Bala : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         Destroy(gameObject);
+
+       /*  //enemigo
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        } */
     }
 }//
