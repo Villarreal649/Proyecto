@@ -30,23 +30,28 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    void ProcessInputs()
+    // Procesamos las entradas del teclado
+void ProcessInputs()
+{
+    // Obtenemos el valor de los ejes horizontal y vertical
+    float moveX = Input.GetAxisRaw("Horizontal");
+    float moveY = Input.GetAxisRaw("Vertical");
+
+    // Normalizamos la dirección del movimiento
+    moveDirection = new Vector2(moveX, moveY).normalized;
+
+    // Cambiamos la animación de movimiento del personaje
+    animator.SetFloat("moveX", moveX);
+    animator.SetFloat("moveY", moveY);
+
+    // Guardamos la última dirección en la que se movió el personaje
+    if(moveX !=0 || moveY != 0)
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        moveDirection = new Vector2(moveX, moveY).normalized;
-
-        animator.SetFloat("moveX", moveX);
-        animator.SetFloat("moveY", moveY);
-
-        if(moveX !=0 || moveY != 0)
-        {
-            animator.SetFloat("UltimoX", moveX);
-            animator.SetFloat("UltimoY",moveY);
-        }
-
+        animator.SetFloat("UltimoX", moveX);
+        animator.SetFloat("UltimoY",moveY);
     }
+
+}
 
     void Move()
     {

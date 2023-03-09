@@ -31,14 +31,29 @@ public class Enemy : MonoBehaviour
         // Obtener componente Animator
         animator = GetComponent<Animator>();
         // Reproducir animación de caminar
-        animator.Play("caminar1");
+        animator.Play("RodianCaminar");
     }
 
     private void Update() {
-        if (player != null)
-        {
-            navMeshAgent.SetDestination(player.transform.position);
-        }
+       if (player != null)
+{
+    navMeshAgent.SetDestination(player.transform.position);
+
+    // Obtener dirección de movimiento del enemigo
+    Vector3 moveDir = navMeshAgent.desiredVelocity;
+    moveDir.y = 0;
+
+    // Cambiar la escala del sprite horizontalmente
+    if (moveDir.x < 0)
+    {
+        transform.localScale = new Vector3(-1, 1, 1); // Invertir escala en X
+    }
+    else if (moveDir.x > 0)
+    {
+        transform.localScale = new Vector3(1, 1, 1); // Mantener escala en X positiva
+    }
+}
+
     }
 
    

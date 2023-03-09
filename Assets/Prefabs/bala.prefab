@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312fa0270c7ab60488c72b90ed7e34fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
+  lightPrefab: {fileID: 78899312853950082, guid: 2a4163405f2ce484f832880d07ffd5d1, type: 3}
 --- !u!61 &8442824167306615066
 BoxCollider2D:
   m_ObjectHideFlags: 0
