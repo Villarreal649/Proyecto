@@ -34,28 +34,28 @@ public class Enemy : MonoBehaviour
         animator.Play("RodianCaminar");
     }
 
-    private void Update() {
+    private void Update() 
+    {
        if (player != null)
-{
-    navMeshAgent.SetDestination(player.transform.position);
+        {
+            navMeshAgent.SetDestination(player.transform.position);
 
-    // Obtener dirección de movimiento del enemigo
-    Vector3 moveDir = navMeshAgent.desiredVelocity;
-    moveDir.y = 0;
+            // Obtener dirección de movimiento del enemigo
+            Vector3 moveDir = navMeshAgent.desiredVelocity;
+            moveDir.y = 0;
 
-    // Cambiar la escala del sprite horizontalmente
-    if (moveDir.x < 0)
-    {
-        transform.localScale = new Vector3(-1, 1, 1); // Invertir escala en X
-    }
-    else if (moveDir.x > 0)
-    {
-        transform.localScale = new Vector3(1, 1, 1); // Mantener escala en X positiva
-    }
-}
-
-    }
-
+            // Cambiar la escala del sprite horizontalmente
+            if (moveDir.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1); // Invertir escala en X
+            }
+            else if (moveDir.x > 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1); // Mantener escala en X positiva
+            }
+        }        
+     }
+     
    
    /*  [SerializeField] float speed;
     GameObject player;

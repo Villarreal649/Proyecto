@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-8748929690257081418
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: CaminaDiagAbaDerecha
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6cc1e3a4d1b47644f8a8d4a72d6d20f6, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!206 &-8615671379256746194
 BlendTree:
   m_ObjectHideFlags: 1
@@ -105,14 +79,14 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 1
---- !u!1102 &-8368091032459498369
+--- !u!1102 &-7838978963027047722
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CaminaDiagArrDerecha
+  m_Name: quietoY
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -125,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 924196cc8aa467d47a1215cecc97e5a3, type: 2}
+  m_Motion: {fileID: 7400000, guid: ce9513f0198c5c24eb3225865eef560a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -216,14 +190,14 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-2196233548000574946
+--- !u!1102 &-2596384902374955639
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CaminaDiagArrIzquierda
+  m_Name: quieto-X
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -236,7 +210,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 842c158093c1c994ebd7438b6df4c5c0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 70dbb7d15e7046349a51b0ee0ddeaf72, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -315,6 +289,32 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1102 &245730341293881452
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: quietoX
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 5db3091a1a65c6246be14ba944aaadde, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1437181862993040070
 AnimatorState:
   serializedVersion: 6
@@ -370,61 +370,14 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!206 &2036690735802410766
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ee765a96f7ab259449618c61c21aba5d, type: 2}
-    m_Threshold: -1
-    m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 558652e516604c94ba66f03f9966a545, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 3618f35cd6cb50e45b76bb5f6ec75cfa, type: 2}
-    m_Threshold: 3
-    m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5db0f4ac68d566a47a2ffbe54f481207, type: 2}
-    m_Threshold: 5
-    m_Position: {x: 0, y: -1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Horizontal
-    m_Mirror: 0
-  m_BlendParameter: moveX
-  m_BlendParameterY: moveY
-  m_MinThreshold: -1
-  m_MaxThreshold: 5
-  m_UseAutomaticThresholds: 0
-  m_NormalizedBlendValues: 0
-  m_BlendType: 1
---- !u!1102 &3861622333728068032
+--- !u!1102 &1757702728756338893
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Caminando 0
+  m_Name: MuertoN
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -437,7 +390,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2036690735802410766}
+  m_Motion: {fileID: 7400000, guid: 03f1854cb19d24a4595b9e79f93629e8, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &3907692754126995951
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Muerto
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: acc37ae8fd3dc274bbd8f1617d5d33f1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -468,32 +447,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &5341920189636263422
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: CaminaDiagAbaIzquierda
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4dc98e1d6ee151142be1b6693b3a1e12, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!206 &6403487966918789047
 BlendTree:
   m_ObjectHideFlags: 1
@@ -577,35 +530,35 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -515934649423199287}
-    m_Position: {x: 380, y: -1050, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3861622333728068032}
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 530, y: -1130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1437181862993040070}
-    m_Position: {x: 380, y: -1140, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8368091032459498369}
-    m_Position: {x: 415, y: -1075, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2196233548000574946}
-    m_Position: {x: 450, y: -1010, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8748929690257081418}
-    m_Position: {x: 485, y: -945, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 5341920189636263422}
-    m_Position: {x: 520, y: -880, z: 0}
+    m_Position: {x: 250, y: -1130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7394501418186926983}
-    m_Position: {x: 555, y: -815, z: 0}
+    m_Position: {x: 860, y: -1250, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 245730341293881452}
+    m_Position: {x: 895, y: -1185, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7838978963027047722}
+    m_Position: {x: 930, y: -1120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2596384902374955639}
+    m_Position: {x: 960, y: -1050, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3907692754126995951}
+    m_Position: {x: 280, y: -1330, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1757702728756338893}
+    m_Position: {x: 590, y: -1330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 30, y: -1160, z: 0}
-  m_EntryPosition: {x: 90, y: -1020, z: 0}
+  m_EntryPosition: {x: 30, y: -1120, z: 0}
   m_ExitPosition: {x: 1280, y: -840, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1437181862993040070}

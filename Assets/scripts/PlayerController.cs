@@ -31,6 +31,44 @@ public class PlayerController : MonoBehaviour
     }
 
     // Procesamos las entradas del teclado
+/* void ProcessInputs()
+{
+    // Obtenemos el valor de los ejes horizontal y vertical
+    float moveX = Input.GetAxisRaw("Horizontal");
+    float moveY = Input.GetAxisRaw("Vertical");
+
+    // Normalizamos la dirección del movimiento
+    moveDirection = new Vector2(moveX, moveY).normalized;
+
+    // Cambiamos la animación de movimiento del personaje según la posición del cursor
+    Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    float deltaX = cursorPosition.x - transform.position.x;
+    float deltaY = cursorPosition.y - transform.position.y;
+    if (Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
+    {
+        moveX = deltaX > 0 ? 1 : -1;
+        moveY = 0;
+    }
+    else
+    {
+        moveY = deltaY > 0 ? 1 : -1;
+        moveX = 0;
+    }
+    animator.SetFloat("moveX", moveX);
+    animator.SetFloat("moveY", moveY);
+
+    // Guardamos la última dirección en la que se movió el personaje
+    if(moveX != 0 || moveY != 0)
+    {
+        animator.SetFloat("UltimoX", moveX);
+        animator.SetFloat("UltimoY", moveY);
+    }
+
+    // Movemos al jugador
+    float movePlayerX = Input.GetAxisRaw("Horizontal");
+    float movePlayerY = Input.GetAxisRaw("Vertical");
+    transform.position += new Vector3(movePlayerX, movePlayerY, 0) * moveSpeed * Time.deltaTime;
+} */
 void ProcessInputs()
 {
     // Obtenemos el valor de los ejes horizontal y vertical
