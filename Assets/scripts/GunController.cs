@@ -11,6 +11,7 @@ public class GunController : MonoBehaviour
     public Light2D luzDisparo; // Agregamos una referencia a la luz de disparo
     public AudioSource fuenteAudio;
     public AudioClip sonidoDisparo;
+    
 
 
     void Start()
@@ -56,22 +57,6 @@ public class GunController : MonoBehaviour
         spawnBala.localPosition = new Vector3(spawnBala.localPosition.x, Mathf.Abs(spawnBala.localPosition.y), spawnBala.localPosition.z);
         luzDisparo.transform.localPosition = new Vector3(luzDisparo.transform.localPosition.x, Mathf.Abs(luzDisparo.transform.localPosition.y), luzDisparo.transform.localPosition.z);
     }
- /*    void Aim(){
-    Vector3 mousePos = Input.mousePosition;
-    Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-
-    Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
-    float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-
-    transform.rotation = Quaternion.Euler(0, 0, angle);
-
-    int signo = (mousePos.x < screenPoint.x) ? -1 : 1;
-    sprite.flipY = (signo == -1);
-
-    spawnBala.localPosition = new Vector3(spawnBala.localPosition.x, Mathf.Abs(spawnBala.localPosition.y) * signo, spawnBala.localPosition.z);
-    luzDisparo.transform.localPosition = new Vector3(luzDisparo.transform.localPosition.x, Mathf.Abs(luzDisparo.transform.localPosition.y) * signo, luzDisparo.transform.localPosition.z);
-} */
-
 }
 
 

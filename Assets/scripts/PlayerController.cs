@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     float moveY = Input.GetAxisRaw("Vertical");
 
     // Normalizamos la dirección del movimiento
-    moveDirection = new Vector2(moveX, moveY).normalized;
+    moveDirection = new Vector2(mSoveX, moveY).normalized;
 
     // Cambiamos la animación de movimiento del personaje según la posición del cursor
     Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
