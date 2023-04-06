@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7414565848212093370}
   - component: {fileID: 7414565848212093371}
   - component: {fileID: -3847786011682579551}
+  - component: {fileID: 3694760920341606186}
   m_Layer: 0
   m_Name: Rodians
   m_TagString: Rodians
@@ -322,3 +323,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 11400000, guid: 4a788f04db0f7e84790a0d1eefc3844c, type: 2}
   defaultCursor: {fileID: 11400000, guid: 949180570a12b5747bfc5c010abee099, type: 2}
+--- !u!114 &3694760920341606186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414565848212093364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96f46de487a5824b989041bc4a5862a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 1
+  explosionPrefab: {fileID: 3198615294042074492, guid: 40a20922c88b53d428b226b158823061, type: 3}

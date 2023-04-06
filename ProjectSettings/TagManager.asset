@@ -8,6 +8,10 @@ TagManager:
   - Bullet
   - Enemy
   - Rodians
+  - Escopeta
+  - BulletEscopeta
+  - Arma
+  - Balas
   layers:
   - Default
   - TransparentFX
