@@ -131,6 +131,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b3f8a51b9de59ad4ebad3af8247e5cda, type: 3}
   - {fileID: 8300000, guid: 6d43bb13ce127eb40ba04731335f0660, type: 3}
   audioDelay: 1
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!195 &7414565848212093375
 NavMeshAgent:
   m_ObjectHideFlags: 0

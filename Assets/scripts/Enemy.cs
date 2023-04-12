@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public AudioClip[] audioClips;
     public float audioDelay = 0.5f;
     private Animator animator;
+    public string[] animationNames = {"RodianCaminar", "RodianMorado", "RodianRojo"};
 
     private void Start()
     {
@@ -30,8 +31,9 @@ public class Enemy : MonoBehaviour
         }
         // Obtener componente Animator
         animator = GetComponent<Animator>();
-        // Reproducir animación de caminar
-        animator.Play("RodianCaminar");
+        // Seleccionar animación aleatoria
+        int animIndex = Random.Range(0, animationNames.Length);
+        animator.Play(animationNames[animIndex]);
     }
 
     private void Update() 
@@ -54,51 +56,5 @@ public class Enemy : MonoBehaviour
                 transform.localScale = new Vector3(1, 1, 1); // Mantener escala en X positiva
             }
         }        
-     }
-     
-   
-   /*  [SerializeField] float speed;
-    GameObject player;
-    //Animator anim;
-    bool isAlive = true;
-
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        //anim = GetComponentInChildren<Animator>();
     }
-
-    private void Update()
-    {
-        if (player != null && isAlive)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Bullet"))
-        {
-            //anim.SetTrigger("Dead");
-            isAlive = false;
-            Destroy(gameObject, 0.3f);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        // Restringir el movimiento del enemigo en la dirección del objeto del escenario
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            if (Mathf.Abs(other.contacts[0].normal.x) > 0.5f)
-            {
-                speed = 0f;
-            }
-            if (Mathf.Abs(other.contacts[0].normal.y) > 0.5f)
-            {
-                speed = 0f;
-            }
-        }
-    } */
 }

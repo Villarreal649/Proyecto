@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         enemyCount = 0; // Inicializar la cantidad de enemigos instanciados a cero
-        InvokeRepeating("SpawnEnemies",0.5f, 1f);
+        InvokeRepeating("SpawnEnemies",0.5f, 10f);
     }
 
     void SpawnEnemies()
