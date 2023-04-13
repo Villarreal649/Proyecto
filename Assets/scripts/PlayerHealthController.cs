@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -46,10 +47,12 @@ public class PlayerHealthController : MonoBehaviour
                 if (transform.position.x < 0)
                 {
                     animatorMuertoN.Play("MuertoN");
+                    SceneManager.LoadScene("GameOver");
                 }
                 else
                 {
                     animatorMuerto.Play("Muerto");
+                    SceneManager.LoadScene("GameOver");
                 }
 
                 Debug.Log("Game Over"); // Lanza un mensaje de "Game Over"
