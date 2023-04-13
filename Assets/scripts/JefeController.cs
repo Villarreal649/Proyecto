@@ -1,81 +1,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class JefeController : MonoBehaviour
 {
-    [SerializeField] AudioClip[] sounds;
+
+    private GameObject player;
+    [SerializeField] private Transform objetivo;
+    private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
-    public Transform playerTransform;
-    public float teleportDistance = 5f;
-    public float teleportCooldown = 5f;
-    public float attackCooldown = 2f;
-    private float lastTeleportTime;
-    private float lastAttackTime;
+    public AudioClip[] audioClips;
+    public float speed = 3.5f;
+    public float audioDelay = 0.5f;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+        navMeshAgent.speed = speed; // Asignar velocidad al NavMeshAgent
+        // Obtener componente AudioSource
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(PlayRandomSoundCoroutine());
-
-        // Busca el objeto con el tag "Player" y guarda su transform en la variable playerTransform.
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        // Reproducir sonido aleatorio
+        if (audioClips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Length);
+            audioSource.clip = audioClips[randomIndex];
+            audioSource.PlayDelayed(audioDelay);
+        }
     }
 
     private void Update()
     {
-        // Verifica si ya ha pasado el tiempo suficiente para poder teletransportarse de nuevo.
-        if (Time.time - lastTeleportTime >= teleportCooldown)
+        navMeshAgent.SetDestination(objetivo.position);
+        if (player != null)
         {
-            // Verifica si el jugador está lo suficientemente cerca para teletransportarse.
-            if (Vector2.Distance(transform.position, playerTransform.position) <= teleportDistance)
-            {
-                // Teletransporta el jefe a una posición aleatoria cerca del jugador.
-                Vector2 randomOffset = Random.insideUnitCircle * teleportDistance;
-                Vector3 newPosition = playerTransform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
-                transform.position = newPosition;
+            // Obtener dirección de movimiento del enemigo
+            Vector3 moveDir = navMeshAgent.desiredVelocity;
+            moveDir.y = 0;
 
-                // Actualiza el tiempo del último teletransporte.
-                lastTeleportTime = Time.time;
+            // Cambiar la escala del sprite horizontalmente
+            if (moveDir.x < 0)
+            {
+                transform.localScale = new Vector3(-2, 2, 2); // Invertir escala en X
+            }
+            else if (moveDir.x > 0)
+            {
+                transform.localScale = new Vector3(2, 2, 2); // Mantener escala en X positiva
             }
         }
-
-        // Verifica si ya ha pasado el tiempo suficiente para poder atacar de nuevo.
-        if (Time.time - lastAttackTime >= attackCooldown)
-        {
-            // Realiza el ataque.
-            Attack();
-
-            // Actualiza el tiempo del último ataque.
-            lastAttackTime = Time.time;
-        }
     }
 
-    private IEnumerator PlayRandomSoundCoroutine()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        while (true)
+        // Restringir el movimiento del personaje en la dirección del objeto del escenario
+        if (other.gameObject.CompareTag("Wall"))
         {
-            yield return new WaitForSeconds(5f);
-            PlayRandomSound();
+            if (Mathf.Abs(other.contacts[0].normal.x) > 0.5f)
+            {
+                navMeshAgent.velocity = new Vector2(0f, navMeshAgent.velocity.y);
+            }
+            if (Mathf.Abs(other.contacts[0].normal.y) > 0.5f)
+            {
+                navMeshAgent.velocity = new Vector2(navMeshAgent.velocity.x, 0f);
+            }
         }
-    }
-
-    private void PlayRandomSound()
-    {
-        if (sounds.Length == 0)
-        {
-            Debug.LogWarning("No sounds assigned");
-            return;
-        }
-
-        int index = Random.Range(0, sounds.Length);
-        audioSource.PlayOneShot(sounds[index]);
-    }
-
-    private void Attack()
-    {
-        // Implementa el código para el ataque del jefe aquí.
-        // Puede ser un ataque cuerpo a cuerpo, un ataque a distancia, un ataque mágico, etc.
     }
 }

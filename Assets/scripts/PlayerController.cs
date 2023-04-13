@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 15f;
 
     private Rigidbody2D rb;
-
+    private AudioSource audioSource; // Nuevo
     private Vector2 moveDirection;
     public Animator animator;
     private GunController gunController;
-    
+    public AudioClip pickupSound; // Nuevo
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         gunController = GameObject.FindGameObjectWithTag("Arma").GetComponent<GunController>()
         ?? GameObject.FindGameObjectWithTag("Escopeta").GetComponent<GunController>();
-
+        audioSource = GetComponent<AudioSource>(); // Nuevo
         
         
     }
@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         GunController gunController = GetComponentInChildren<GunController>();
         gunController.AgregarBalas(5);
         Destroy(collision.gameObject);
+        audioSource.PlayOneShot(pickupSound); // Nuevo
     }
 }
 

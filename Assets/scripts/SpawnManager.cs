@@ -8,11 +8,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] int maxEnemies; // Límite máximo de enemigos a instanciar
     private int enemyCount; // Cantidad actual de enemigos instanciados
+    [SerializeField] float timeBetweenSpawns = 5f;
 
     private void Start()
     {
         enemyCount = 0; // Inicializar la cantidad de enemigos instanciados a cero
-        InvokeRepeating("SpawnEnemies",0.5f, 10f);
+        InvokeRepeating("SpawnEnemies", 0.5f, timeBetweenSpawns);
     }
 
     void SpawnEnemies()

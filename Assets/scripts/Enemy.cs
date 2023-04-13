@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-
+    
     private GameObject player;
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
