@@ -7,6 +7,9 @@ public class Bala : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] UnityEngine.Rendering.Universal.Light2D lightPrefab; // Prefab de la luz a asociar con la bala
     private UnityEngine.Rendering.Universal.Light2D lightInstance; // Instancia de la luz asociada a esta bala
+    public float lifeTime;
+    public GameObject explosion;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +17,7 @@ public class Bala : MonoBehaviour
         // Crear la luz y posicionarla en la misma posición que la bala
         lightInstance = Instantiate(lightPrefab, transform.position, Quaternion.identity);
         lightInstance.transform.parent = transform;
+        Invoke("DestroyProjectile",lifeTime);
     }
 
     // Update is called once per frame
@@ -27,6 +31,11 @@ public class Bala : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
+        Destroy(gameObject);
+    }
+
+    void DestroyProjectile(){
+        Instantiate(explosion,transform.position,Quaternion.identity);
         Destroy(gameObject);
     }
 }

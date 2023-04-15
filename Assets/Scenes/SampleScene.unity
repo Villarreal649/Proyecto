@@ -18240,7 +18240,7 @@ MonoBehaviour:
   - {fileID: 1734268105}
   - {fileID: 744103329}
   - {fileID: 601736344}
-  enemy: {fileID: 7414565848212093364, guid: 3e1d640a3fca5e643bc8d17121331d6c, type: 3}
+  enemy: {fileID: 8855554100510657563, guid: fe563fd319e8c924f8998c6bb7756d9a, type: 3}
   maxEnemies: 100
   timeBetweenSpawns: 1
 --- !u!4 &1317870214

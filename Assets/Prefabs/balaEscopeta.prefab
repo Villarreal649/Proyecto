@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   lightPrefab: {fileID: 78899312853950082, guid: 2a4163405f2ce484f832880d07ffd5d1, type: 3}
+  lifeTime: 0.5
+  explosion: {fileID: 3198615294042074492, guid: e47a5e09380cdf14bb672ad74c0b44e5, type: 3}
 --- !u!61 &8442824167306615066
 BoxCollider2D:
   m_ObjectHideFlags: 0

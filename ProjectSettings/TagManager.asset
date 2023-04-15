@@ -12,6 +12,9 @@ TagManager:
   - BulletEscopeta
   - Arma
   - Balas
+  - Soldado Corredor
+  - Jefe
+  - balaSalta
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Rodians
   - 
   - 
   - 
