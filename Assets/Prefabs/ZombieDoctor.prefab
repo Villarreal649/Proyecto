@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 7636718952415678321}
   - component: {fileID: 5899930353961609063}
   - component: {fileID: 7078574616770460781}
-  - component: {fileID: 8907884171548131198}
   - component: {fileID: 4790912508172546556}
   - component: {fileID: 8453250982331933603}
   m_Layer: 0
@@ -292,20 +291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 3
   explosionPrefab: {fileID: 3198615294042074492, guid: 40a20922c88b53d428b226b158823061, type: 3}
---- !u!114 &8907884171548131198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8855554100510657563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18ee895e7cc0bca478bde673b12a0d33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursor: {fileID: 11400000, guid: 4a788f04db0f7e84790a0d1eefc3844c, type: 2}
-  defaultCursor: {fileID: 11400000, guid: 949180570a12b5747bfc5c010abee099, type: 2}
 --- !u!114 &4790912508172546556
 MonoBehaviour:
   m_ObjectHideFlags: 0
