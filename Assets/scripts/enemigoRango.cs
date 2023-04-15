@@ -8,6 +8,7 @@ public class enemigoRango : MonoBehaviour
     public float bulletSpeed = 10f;
     public float shootRange = 5f;
     public float shootDelay = 1f; // tiempo de espera entre disparos
+    public float minDistance = 2f; // distancia mínima que el enemigo debe mantener con el jugador
     private float shootTimer = 0f; // temporizador de disparo   
 
     private GameObject player;
@@ -28,7 +29,15 @@ public class enemigoRango : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < shootRange)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+
+        if (distanceToPlayer <= shootRange && distanceToPlayer > minDistance)
+        {
+            // mover hacia el jugador
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * bulletSpeed);
+        }
+
+        if (distanceToPlayer < shootRange)
         {
             shootTimer += Time.deltaTime; // incrementar el temporizador
 
@@ -48,7 +57,7 @@ public class enemigoRango : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject); // destruir la bala al chocar con el jugador
+            Destroy(gameObject); // destruir el enemigo al colisionar con el jugador
         }
     }
 }

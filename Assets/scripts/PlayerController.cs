@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
     public Animator animator;
     private GunController gunController;
+    private PlayerHealthController playerHealthController;
     public AudioClip pickupSound; // Nuevo
 
     // Start is called before the first frame update
@@ -32,6 +34,13 @@ public class PlayerController : MonoBehaviour
     {
         GunController gunController = GetComponentInChildren<GunController>();
         gunController.AgregarBalas(5);
+        Destroy(collision.gameObject);
+        audioSource.PlayOneShot(pickupSound); // Nuevo
+    }else
+    if (collision.CompareTag("botiquin"))
+    {
+        PlayerHealthController playerHealthController = GetComponentInChildren<PlayerHealthController>();
+        playerHealthController.Agregarvidas(10);
         Destroy(collision.gameObject);
         audioSource.PlayOneShot(pickupSound); // Nuevo
     }

@@ -32,6 +32,7 @@ public class Bala : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         Destroy(gameObject);
+        Instantiate(explosion,transform.position,Quaternion.identity);
     }
 
     void DestroyProjectile(){

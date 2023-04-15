@@ -10,7 +10,7 @@ public class JefeSaludController : MonoBehaviour
     [SerializeField] Animator animatorMuerto;
     [SerializeField] Animator animatorMuertoN;
     [SerializeField] AudioClip sonidoMuerte;
-
+    
     private bool isDead = false;
 
     private void Start()
@@ -38,16 +38,24 @@ public class JefeSaludController : MonoBehaviour
                 if (transform.position.x < 0)
                 {
                     animatorMuertoN.Play("Muerte");
+
                 }
                 else
                 {
                     animatorMuerto.Play("Muerte");
+
                 }
 
                 AudioSource audioSource = GetComponent<AudioSource>();
                 audioSource.clip = sonidoMuerte;
                 audioSource.Play(); // Reproduce el sonido de muerte
                 Debug.Log("Boss defeated!"); // Lanza un mensaje de "Boss defeated!"
+                GameObject spawnMosca = GameObject.Find("SpawnMosca");
+                if (spawnMosca != null)
+                {
+                    Destroy(spawnMosca);
+                }
+                
             }
         }
         else if (other.gameObject.CompareTag("BulletEscopeta"))
@@ -65,16 +73,23 @@ public class JefeSaludController : MonoBehaviour
                 if (transform.position.x < 0)
                 {
                     animatorMuertoN.Play("Muerte");
+
                 }
                 else
                 {
                     animatorMuerto.Play("Muerte");
+
                 }
 
                 AudioSource audioSource = GetComponent<AudioSource>();
                 audioSource.clip = sonidoMuerte;
                 audioSource.Play(); // Reproduce el sonido de muerte
                 Debug.Log("Boss defeated!"); // Lanza un mensaje de "Boss defeated!"
+                GameObject spawnMosca = GameObject.Find("SpawnMosca");
+                if (spawnMosca != null)
+                {
+                    Destroy(spawnMosca);
+                }
             }
         }
     }

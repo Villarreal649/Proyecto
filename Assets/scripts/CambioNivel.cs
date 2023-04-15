@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CambioNivel : MonoBehaviour
 {
     private float timer = 0f;
-    private float timeToChangeScene = 10f; // tiempo para cambiar de escena
+    private float timeToChangeScene = 60f; // tiempo para cambiar de escena
     private float timeToShowMessage = 5f; // tiempo para mostrar el mensaje
     public GameObject mensaje; // referencia al gameobject Mensaje
     public TMPro.TextMeshProUGUI Tiempo;
