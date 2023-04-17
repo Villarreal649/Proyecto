@@ -105,7 +105,7 @@ public class JefeSaludController : MonoBehaviour
     }
     IEnumerator DelayBeforeLoadScene()
 {
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(4);
     SceneManager.LoadScene("Victoria");
 }
 }

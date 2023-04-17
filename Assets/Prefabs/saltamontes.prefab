@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7871209154370152902}
   m_Layer: 0
   m_Name: saltamontes
-  m_TagString: Enemy
+  m_TagString: mosca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   sonidoMuerte: {fileID: 0}
   audioClips:
   - {fileID: 8300000, guid: 915dbc010c0736d4991ba1a4b1057492, type: 3}
-  audioDelay: 0.5
+  audioDelay: 2
   explosion: {fileID: 3198615294042074492, guid: 40a20922c88b53d428b226b158823061, type: 3}
   bulletDamage: 15
   bulletEscopetaDamage: 25
