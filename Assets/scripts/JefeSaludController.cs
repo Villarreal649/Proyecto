@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class JefeSaludController : MonoBehaviour
 {
@@ -38,11 +40,13 @@ public class JefeSaludController : MonoBehaviour
                 if (transform.position.x < 0)
                 {
                     animatorMuertoN.Play("Muerte");
+                      StartCoroutine(DelayBeforeLoadScene());
 
                 }
                 else
                 {
                     animatorMuerto.Play("Muerte");
+                      StartCoroutine(DelayBeforeLoadScene());
 
                 }
 
@@ -51,6 +55,7 @@ public class JefeSaludController : MonoBehaviour
                 audioSource.Play(); // Reproduce el sonido de muerte
                 Debug.Log("Boss defeated!"); // Lanza un mensaje de "Boss defeated!"
                 GameObject spawnMosca = GameObject.Find("SpawnMosca");
+                Invoke("CambiarDespuesDeDelay", 2f);
                 if (spawnMosca != null)
                 {
                     Destroy(spawnMosca);
@@ -73,11 +78,15 @@ public class JefeSaludController : MonoBehaviour
                 if (transform.position.x < 0)
                 {
                     animatorMuertoN.Play("Muerte");
+                      StartCoroutine(DelayBeforeLoadScene());
+                    
 
                 }
                 else
                 {
                     animatorMuerto.Play("Muerte");
+                      StartCoroutine(DelayBeforeLoadScene());
+                    
 
                 }
 
@@ -85,6 +94,7 @@ public class JefeSaludController : MonoBehaviour
                 audioSource.clip = sonidoMuerte;
                 audioSource.Play(); // Reproduce el sonido de muerte
                 Debug.Log("Boss defeated!"); // Lanza un mensaje de "Boss defeated!"
+            
                 GameObject spawnMosca = GameObject.Find("SpawnMosca");
                 if (spawnMosca != null)
                 {
@@ -93,4 +103,9 @@ public class JefeSaludController : MonoBehaviour
             }
         }
     }
+    IEnumerator DelayBeforeLoadScene()
+{
+    yield return new WaitForSeconds(2);
+    SceneManager.LoadScene("Victoria");
+}
 }

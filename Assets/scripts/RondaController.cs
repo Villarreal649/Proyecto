@@ -12,6 +12,7 @@ public class RondaController : MonoBehaviour
     public TMPro.TextMeshProUGUI Tiempo;
     public GameObject spawnersSegundaRonda;
     public GameObject enemigo;
+    public GameObject sliderEnemigo;
 
     void Update()
     {
@@ -32,8 +33,14 @@ public class RondaController : MonoBehaviour
             {
                 spawners.SetActive(false);
             }
+            GameObject sliderEnemigo = GameObject.Find("SliderEnemigo");
+            if (sliderEnemigo != null)
+            {
+                sliderEnemigo.SetActive(false);
+            }
             spawnersSegundaRonda.SetActive(true);
             enemigo.SetActive(true); // activa el GameObject
+            sliderEnemigo.SetActive(true);
 
 
             StartCoroutine(ShowMessageAndWait());
